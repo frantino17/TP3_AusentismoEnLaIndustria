@@ -13,6 +13,7 @@ namespace tp3
         {
             InitializeComponent();
             InitializeSecondDataGridView();
+            cargarPorDefecto();
             // Configurar DataGridView
             dgvSimulacion.ColumnCount = 10;
             dgvSimulacion.Columns[0].Name = "Día";
@@ -61,8 +62,17 @@ namespace tp3
                 // Calcular ingresos y costos
                 int ingresosDiarios = plantaOperativa ? (int)valorVenta : 0;
                 int materiaPrima = plantaOperativa ? (int)costosVariables : 0;
-                int costosManoObra = (int)(remuneraciones * obrerosPresentes);
-                double gananciaDiaria = ingresosDiarios - materiaPrima - costosManoObra;
+                int costoManoObra;
+                if(plantaOperativa)
+                {
+                    costoManoObra = (int)(remuneraciones * obrerosPresentes );
+                }
+                else
+                {
+                    costoManoObra = (int)(remuneraciones * (obrerosPresentes + obrerosAusentes));
+                }
+                
+                double gananciaDiaria = ingresosDiarios - materiaPrima - costoManoObra;
 
                 // Actualizar la ganancia total
                 gananciaTotal += gananciaDiaria;
@@ -70,7 +80,7 @@ namespace tp3
                 // Agregar fila a DataGridView solo si el día es mayor o igual a desdeDia
                 if (dia >= desdeDia && dgvSimulacion.Rows.Count <= cantidadDiasMostrar)
                 {
-                    dgvSimulacion.Rows.Add(dia, numeroAleatorio, obrerosAusentes, obrerosPresentes, plantaOperativa, ingresosDiarios, materiaPrima, costosManoObra, gananciaDiaria, gananciaTotal);
+                    dgvSimulacion.Rows.Add(dia, numeroAleatorio, obrerosAusentes, obrerosPresentes, plantaOperativa, ingresosDiarios, materiaPrima, costoManoObra, gananciaDiaria, gananciaTotal);
                 }
 
 
@@ -154,7 +164,8 @@ namespace tp3
                 }
                 else
                 {
-                    valoresProb.Add(0);
+                    MessageBox.Show("Complete la tabla de Ausentismo Por Dia antes de realizar la Simulacion","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
 
@@ -169,45 +180,29 @@ namespace tp3
             for (int i = 0; i < 6; i++)
             {
                 dgvProb.Rows.Add(i.ToString());
+                
+               
             }
 
             // Impide que los usuarios agreguen filas
             dgvProb.AllowUserToAddRows = false;
         }
 
-        private void txtRemuneraciones_TextChanged(object sender, EventArgs e)
+        public void cargarPorDefecto()
         {
+            int filas = dgvProb.Rows.Count;
+            int[] valoresDefecto = [36, 38, 19, 6, 1, 0];
+            for(int  i = 0; i < filas; i++)
+            {
+                dgvProb.Rows[i].Cells["CantDias"].Value = valoresDefecto[i];
 
+            }
         }
 
-        private void txtDesdeDia_TextChanged(object sender, EventArgs e)
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void dgvSimulacion_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvProb_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            LimpiarCampos();
         }
     }
 }

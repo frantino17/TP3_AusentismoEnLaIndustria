@@ -15,3 +15,20 @@ D:\Facultad\4 - Cuarto año\Simulacion\SIM-TP3\obj\Debug\net8.0-windows\refint\t
 D:\Facultad\4 - Cuarto año\Simulacion\SIM-TP3\obj\Debug\net8.0-windows\tp3.pdb
 D:\Facultad\4 - Cuarto año\Simulacion\SIM-TP3\obj\Debug\net8.0-windows\tp3.genruntimeconfig.cache
 D:\Facultad\4 - Cuarto año\Simulacion\SIM-TP3\obj\Debug\net8.0-windows\ref\tp3.dll
+D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\bin\Debug\net8.0-windows\tp3.exe
+D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\bin\Debug\net8.0-windows\tp3.deps.json
+D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\bin\Debug\net8.0-windows\tp3.runtimeconfig.json
+D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\bin\Debug\net8.0-windows\tp3.dll
+D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\bin\Debug\net8.0-windows\tp3.pdb
+D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.Form1.resources
+D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.csproj.GenerateResource.cache
+D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.GeneratedMSBuildEditorConfig.editorconfig
+D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.AssemblyInfoInputs.cache
+D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.AssemblyInfo.cs
+D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.csproj.CoreCompileInputs.cache
+D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.sourcelink.json
+D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.dll
+D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\refint\tp3.dll
+D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.pdb
+D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.genruntimeconfig.cache
+D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\ref\tp3.dll
