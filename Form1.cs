@@ -13,6 +13,7 @@ namespace tp3
         {
             InitializeComponent();
             InitializeSecondDataGridView();
+            cargarPorDefecto();
             // Configurar DataGridView
             dgvSimulacion.ColumnCount = 10;
             dgvSimulacion.Columns[0].Name = "Día";
@@ -123,7 +124,7 @@ namespace tp3
             int obrerosAusentes = 0;
             for (int i = 0; i < valoresProb.Count; i++)
             {
-                double probabilidad = Math.Round((double)valoresProb[i] / total, 4);
+                double probabilidad = Math.Round((double)valoresProb[i] / total, 5);
                 probabilidadAcumulada += probabilidad;
                 if (numeroAleatorio < probabilidadAcumulada)
                 {
@@ -163,7 +164,8 @@ namespace tp3
                 }
                 else
                 {
-                    valoresProb.Add(0);
+                    MessageBox.Show("Complete la tabla de Ausentismo Por Dia antes de realizar la Simulacion","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
 
@@ -178,51 +180,25 @@ namespace tp3
             for (int i = 0; i < 6; i++)
             {
                 dgvProb.Rows.Add(i.ToString());
+                
+               
             }
 
             // Impide que los usuarios agreguen filas
             dgvProb.AllowUserToAddRows = false;
         }
 
-        private void txtRemuneraciones_TextChanged(object sender, EventArgs e)
+        public void cargarPorDefecto()
         {
+            int filas = dgvProb.Rows.Count;
+            int[] valoresDefecto = [36, 38, 19, 6, 1, 0];
+            for(int  i = 0; i < filas; i++)
+            {
+                dgvProb.Rows[i].Cells["CantDias"].Value = valoresDefecto[i];
 
+            }
         }
 
-        private void txtDesdeDia_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvSimulacion_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvProb_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {

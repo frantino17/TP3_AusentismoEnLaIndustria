@@ -58,29 +58,29 @@ namespace tp3
             txtDiasSimulacion.Location = new Point(203, 284);
             txtDiasSimulacion.Name = "txtDiasSimulacion";
             txtDiasSimulacion.Size = new Size(85, 23);
-            txtDiasSimulacion.TabIndex = 0;
+            txtDiasSimulacion.TabIndex = 2;
             // 
             // txtRemuneraciones
             // 
             txtRemuneraciones.Location = new Point(203, 308);
             txtRemuneraciones.Name = "txtRemuneraciones";
             txtRemuneraciones.Size = new Size(85, 23);
-            txtRemuneraciones.TabIndex = 1;
-            txtRemuneraciones.TextChanged += txtRemuneraciones_TextChanged;
+            txtRemuneraciones.TabIndex = 3;
+            
             // 
             // txtCostosVariables
             // 
             txtCostosVariables.Location = new Point(203, 332);
             txtCostosVariables.Name = "txtCostosVariables";
             txtCostosVariables.Size = new Size(85, 23);
-            txtCostosVariables.TabIndex = 2;
+            txtCostosVariables.TabIndex = 4;
             // 
             // txtValorVenta
             // 
             txtValorVenta.Location = new Point(203, 359);
             txtValorVenta.Name = "txtValorVenta";
             txtValorVenta.Size = new Size(85, 23);
-            txtValorVenta.TabIndex = 3;
+            txtValorVenta.TabIndex = 5;
             // 
             // label1
             // 
@@ -100,7 +100,7 @@ namespace tp3
             label2.Size = new Size(81, 15);
             label2.TabIndex = 5;
             label2.Text = "Valor de venta";
-            label2.Click += label2_Click;
+            
             // 
             // label3
             // 
@@ -110,7 +110,7 @@ namespace tp3
             label3.Size = new Size(92, 15);
             label3.TabIndex = 6;
             label3.Text = "Costos variables";
-            label3.Click += label3_Click;
+            
             // 
             // label4
             // 
@@ -123,7 +123,7 @@ namespace tp3
             // 
             // btnSimulacion
             // 
-            btnSimulacion.Location = new Point(316, 25);
+            btnSimulacion.Location = new Point(352, 25);
             btnSimulacion.Name = "btnSimulacion";
             btnSimulacion.Size = new Size(144, 112);
             btnSimulacion.TabIndex = 8;
@@ -134,27 +134,27 @@ namespace tp3
             // dgvSimulacion
             // 
             dgvSimulacion.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvSimulacion.Location = new Point(303, 157);
+            dgvSimulacion.Location = new Point(352, 178);
             dgvSimulacion.Name = "dgvSimulacion";
             dgvSimulacion.RowHeadersWidth = 51;
             dgvSimulacion.Size = new Size(1132, 443);
             dgvSimulacion.TabIndex = 9;
-            dgvSimulacion.CellContentClick += dgvSimulacion_CellContentClick;
+            
             // 
             // txtDesdeDia
             // 
             txtDesdeDia.Location = new Point(203, 388);
             txtDesdeDia.Name = "txtDesdeDia";
             txtDesdeDia.Size = new Size(85, 23);
-            txtDesdeDia.TabIndex = 10;
-            txtDesdeDia.TextChanged += txtDesdeDia_TextChanged;
+            txtDesdeDia.TabIndex = 6;
+            
             // 
             // txtCantidadDiasMostrar
             // 
             txtCantidadDiasMostrar.Location = new Point(203, 417);
             txtCantidadDiasMostrar.Name = "txtCantidadDiasMostrar";
             txtCantidadDiasMostrar.Size = new Size(85, 23);
-            txtCantidadDiasMostrar.TabIndex = 11;
+            txtCantidadDiasMostrar.TabIndex = 7;
             // 
             // label6
             // 
@@ -184,9 +184,9 @@ namespace tp3
             dgvProb.Margin = new Padding(3, 2, 3, 2);
             dgvProb.Name = "dgvProb";
             dgvProb.RowHeadersWidth = 51;
-            dgvProb.Size = new Size(261, 192);
+            dgvProb.Size = new Size(305, 192);
             dgvProb.TabIndex = 15;
-            dgvProb.CellContentClick += dgvProb_CellContentClick;
+            
             // 
             // Obreros
             // 
@@ -217,15 +217,15 @@ namespace tp3
             txtCantidadObrerosNomina.Location = new Point(203, 255);
             txtCantidadObrerosNomina.Name = "txtCantidadObrerosNomina";
             txtCantidadObrerosNomina.Size = new Size(85, 23);
-            txtCantidadObrerosNomina.TabIndex = 16;
-            txtCantidadObrerosNomina.TextChanged += textBox1_TextChanged;
+            txtCantidadObrerosNomina.TabIndex = 1;
+            
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(30, 458);
+            btnLimpiar.Location = new Point(27, 572);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(258, 49);
-            btnLimpiar.TabIndex = 18;
+            btnLimpiar.TabIndex = 9;
             btnLimpiar.Text = "Limpiar Campos";
             btnLimpiar.UseVisualStyleBackColor = true;
             btnLimpiar.Click += btnLimpiar_Click;
@@ -255,7 +255,7 @@ namespace tp3
             Controls.Add(txtDiasSimulacion);
             Name = "Form1";
             Text = "Form1";
-            Load += Form1_Load;
+            
             ((System.ComponentModel.ISupportInitialize)dgvSimulacion).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvProb).EndInit();
             ResumeLayout(false);
