@@ -4,8 +4,7 @@ using System.Globalization;
 using System.Data;
 using System.Numerics;
 using System.Security.Cryptography;
-using MathNet.Numerics.Distributions;
-using Microsoft.Office.Interop.Excel;
+
 
 
 namespace tp3
