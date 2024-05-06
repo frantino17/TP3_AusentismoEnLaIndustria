@@ -61,8 +61,17 @@ namespace tp3
                 // Calcular ingresos y costos
                 int ingresosDiarios = plantaOperativa ? (int)valorVenta : 0;
                 int materiaPrima = plantaOperativa ? (int)costosVariables : 0;
-                int costosManoObra = (int)(remuneraciones * obrerosPresentes);
-                double gananciaDiaria = ingresosDiarios - materiaPrima - costosManoObra;
+                int costoManoObra;
+                if(plantaOperativa)
+                {
+                    costoManoObra = (int)(remuneraciones * obrerosPresentes );
+                }
+                else
+                {
+                    costoManoObra = (int)(remuneraciones * (obrerosPresentes + obrerosAusentes));
+                }
+                
+                double gananciaDiaria = ingresosDiarios - materiaPrima - costoManoObra;
 
                 // Actualizar la ganancia total
                 gananciaTotal += gananciaDiaria;
@@ -70,7 +79,7 @@ namespace tp3
                 // Agregar fila a DataGridView solo si el día es mayor o igual a desdeDia
                 if (dia >= desdeDia && dgvSimulacion.Rows.Count <= cantidadDiasMostrar)
                 {
-                    dgvSimulacion.Rows.Add(dia, numeroAleatorio, obrerosAusentes, obrerosPresentes, plantaOperativa, ingresosDiarios, materiaPrima, costosManoObra, gananciaDiaria, gananciaTotal);
+                    dgvSimulacion.Rows.Add(dia, numeroAleatorio, obrerosAusentes, obrerosPresentes, plantaOperativa, ingresosDiarios, materiaPrima, costoManoObra, gananciaDiaria, gananciaTotal);
                 }
 
 
@@ -114,7 +123,7 @@ namespace tp3
             int obrerosAusentes = 0;
             for (int i = 0; i < valoresProb.Count; i++)
             {
-                double probabilidad = Math.Round((double)valoresProb[i] / total, 5);
+                double probabilidad = Math.Round((double)valoresProb[i] / total, 4);
                 probabilidadAcumulada += probabilidad;
                 if (numeroAleatorio < probabilidadAcumulada)
                 {
@@ -208,6 +217,16 @@ namespace tp3
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
         }
     }
 }
