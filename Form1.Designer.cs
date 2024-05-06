@@ -161,9 +161,9 @@ namespace tp3
             label6.AutoSize = true;
             label6.Location = new Point(25, 419);
             label6.Name = "label6";
-            label6.Size = new Size(131, 15);
+            label6.Size = new Size(62, 15);
             label6.TabIndex = 13;
-            label6.Text = "Cantidad de iteraciones";
+            label6.Text = "Dias Hasta";
             // 
             // label5
             // 
