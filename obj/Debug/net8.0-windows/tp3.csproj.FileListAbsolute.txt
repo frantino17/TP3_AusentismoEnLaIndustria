@@ -32,3 +32,7 @@ D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\o
 D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.pdb
 D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.genruntimeconfig.cache
 D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\ref\tp3.dll
+D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\bin\Debug\net8.0-windows\MathNet.Numerics.dll
+D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.csproj.AssemblyReference.cache
+D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.csproj.Up2Date
+D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\bin\Debug\net8.0-windows\Microsoft.Office.Interop.Excel.dll

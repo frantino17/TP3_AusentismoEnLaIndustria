@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "f21ZxCpy81Mo+DFsU5izTFiF1izeMKXRG8IYhNx/Wc3QrFbIntIhRGP5f7W3gTNB/J1a07Hj7Q19J803Hhk9Tg==",
+  "dgSpecHash": "BEWfghizP5UvdAdqeImi+MUcjHVs4/NUMEBs3+rBWU5K22ApnXoVY7ficNBr4Hq5eQwUpGR412OQ4E3oSl0Stw==",
   "success": true,
   "projectFilePath": "D:\\Facultad\\SIM\\Practico\\Trabajos Practicos\\TP3\\Tp\\TP3_AusentismoEnLaIndustria\\tp3.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\emili\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
+    "C:\\Users\\emili\\.nuget\\packages\\microsoft.office.interop.excel\\15.0.4795.1001\\microsoft.office.interop.excel.15.0.4795.1001.nupkg.sha512"
+  ],
   "logs": []
 }
