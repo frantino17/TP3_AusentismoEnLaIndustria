@@ -44,63 +44,127 @@ namespace tp3
 
         private void Simular(double valorVenta, double costosVariables, double remuneraciones, int diasSimulacion, int desdeDia, int cantidadDiasMostrar, int cantidadObrerosNomina, List<int> valoresProb, int total)
         {
+            Random rand = new Random();
 
             // Limpiar DataGridView antes de agregar nuevos datos
             dgvSimulacion.Rows.Clear();
 
             double gananciaTotal = 0;
             // Realizar la simulación para cada día
-            for (int dia = 1; dia <= diasSimulacion; dia++)
+            for (int dia = 1; dia <= diasSimulacion; dia+=2)
             {
-                // Genera número aleatorio con 4 decimales
-                Random rand = new Random();
-                double numeroAleatorio = rand.NextDouble();
-                numeroAleatorio = Math.Round(numeroAleatorio, 4);
-
                 int totalObreros = cantidadObrerosNomina;
 
-                // Calcular el número de obreros ausentes
-                //int obrerosAusentes = calcularObrerosAusentes(valoresProb, total,  numeroAleatorio);
-                int obrerosAusentes = calcularObrerosFaltantes(numeroAleatorio);
-
-                // Calcular el número de obreros presentes
-                int obrerosPresentes = totalObreros - obrerosAusentes;
-
-                // Determinar si la planta está en funcionamiento
-                bool plantaOperativa = true;
-                if (obrerosPresentes < 20)
+                if (dia % 2 == 1)
                 {
-                    plantaOperativa = false;
-                }
+                    //FILA 1 
+                    // Genera número aleatorio con 4 decimales
 
-                // Calcular ingresos y costos
-                int ingresosDiarios = plantaOperativa ? (int)valorVenta : 0;
-                int materiaPrima = plantaOperativa ? (int)costosVariables : 0;
-                int costoManoObra;
-                if(plantaOperativa)
-                {
-                    costoManoObra = (int)(remuneraciones * obrerosPresentes );
+                    double numeroAleatorio1 = rand.NextDouble();
+                    numeroAleatorio1 = Math.Round(numeroAleatorio1, 4);
+
+                   
+
+                    // Calcular el número de obreros ausentes
+                    //int obrerosAusentes = calcularObrerosAusentes(valoresProb, total,  numeroAleatorio);
+                    int obrerosAusentes1 = calcularObrerosFaltantes(numeroAleatorio1);
+
+                    // Calcular el número de obreros presentes
+                    int obrerosPresentes1 = totalObreros - obrerosAusentes1;
+
+                    // Determinar si la planta está en funcionamiento
+                    bool plantaOperativa1 = true;
+                    if (obrerosPresentes1 < 20)
+                    {
+                        plantaOperativa1 = false;
+                    }
+
+                    // Calcular ingresos y costos
+                    int ingresosDiarios1 = plantaOperativa1 ? (int)valorVenta : 0;
+                    int materiaPrima1 = plantaOperativa1 ? (int)costosVariables : 0;
+                    int costoManoObra1;
+                    if (plantaOperativa1)
+                    {
+                        costoManoObra1 = (int)(remuneraciones * obrerosPresentes1);
+                    }
+                    else
+                    {
+                        costoManoObra1 = (int)(remuneraciones * (obrerosPresentes1 + obrerosAusentes1));
+                    }
+
+                    double gananciaDiaria1 = ingresosDiarios1 - materiaPrima1 - costoManoObra1;
+
+                    // Actualizar la ganancia total
+                    gananciaTotal += gananciaDiaria1;
+
+                    // Agregar fila a DataGridView solo si el día es mayor o igual a desdeDia
+                    if (dia >= desdeDia && dia <= cantidadDiasMostrar)
+                    {
+                        dgvSimulacion.Rows.Add(dia, numeroAleatorio1, obrerosAusentes1, obrerosPresentes1, plantaOperativa1, ingresosDiarios1, materiaPrima1, costoManoObra1, gananciaDiaria1, gananciaTotal);
+                    }
+                    if (dia == diasSimulacion)
+                    {
+                        dgvSimulacion.Rows.Add(dia, numeroAleatorio1, obrerosAusentes1, obrerosPresentes1, plantaOperativa1, ingresosDiarios1, materiaPrima1, costoManoObra1, gananciaDiaria1, gananciaTotal);
+                    }
+
+                    //FILA 2
+                   
+                    // Genera número aleatorio con 4 decimales
+
+                    double numeroAleatorio2 = rand.NextDouble();
+                    numeroAleatorio2 = Math.Round(numeroAleatorio2, 4);
+
+
+
+                    // Calcular el número de obreros ausentes
+                    //int obrerosAusentes = calcularObrerosAusentes(valoresProb, total,  numeroAleatorio);
+                    int obrerosAusentes2 = calcularObrerosFaltantes(numeroAleatorio2);
+
+                    // Calcular el número de obreros presentes
+                    int obrerosPresentes2 = totalObreros - obrerosAusentes2;
+
+                    // Determinar si la planta está en funcionamiento
+                    bool plantaOperativa2 = true;
+                    if (obrerosPresentes2 < 20)
+                    {
+                        plantaOperativa2 = false;
+                    }
+
+                    // Calcular ingresos y costos
+                    int ingresosDiarios2 = plantaOperativa2 ? (int)valorVenta : 0;
+                    int materiaPrima2 = plantaOperativa2 ? (int)costosVariables : 0;
+                    int costoManoObra2;
+                    if (plantaOperativa2)
+                    {
+                        costoManoObra2 = (int)(remuneraciones * obrerosPresentes2);
+                    }
+                    else
+                    {
+                        costoManoObra2 = (int)(remuneraciones * (obrerosPresentes2 + obrerosAusentes2));
+                    }
+
+                    double gananciaDiaria2 = ingresosDiarios1 - materiaPrima1 - costoManoObra1;
+
+                    // Actualizar la ganancia total
+                    gananciaTotal += gananciaDiaria2;
+
+                    // Agregar fila a DataGridView solo si el día es mayor o igual a desdeDia
+                    if (dia + 1 >= desdeDia && dia + 1 <= cantidadDiasMostrar)
+                    {
+                        dgvSimulacion.Rows.Add(dia + 1, numeroAleatorio2, obrerosAusentes2, obrerosPresentes2, plantaOperativa2, ingresosDiarios2, materiaPrima2, costoManoObra2, gananciaDiaria2, gananciaTotal);
+                    }
+                    if (dia + 1 == diasSimulacion)
+                    {
+                        dgvSimulacion.Rows.Add(dia + 1, numeroAleatorio2, obrerosAusentes2, obrerosPresentes2, plantaOperativa2, ingresosDiarios2, materiaPrima2, costoManoObra2, gananciaDiaria2, gananciaTotal);
+                    }
+
                 }
                 else
                 {
-                    costoManoObra = (int)(remuneraciones * (obrerosPresentes + obrerosAusentes));
+                    
                 }
+
                 
-                double gananciaDiaria = ingresosDiarios - materiaPrima - costoManoObra;
-
-                // Actualizar la ganancia total
-                gananciaTotal += gananciaDiaria;
-
-                // Agregar fila a DataGridView solo si el día es mayor o igual a desdeDia
-                if (dia >= desdeDia && dia <= cantidadDiasMostrar)
-                {
-                    dgvSimulacion.Rows.Add(dia, numeroAleatorio, obrerosAusentes, obrerosPresentes, plantaOperativa, ingresosDiarios, materiaPrima, costoManoObra, gananciaDiaria, gananciaTotal);
-                }
-                if(dia == diasSimulacion)
-                {
-                    dgvSimulacion.Rows.Add(dia, numeroAleatorio, obrerosAusentes, obrerosPresentes, plantaOperativa, ingresosDiarios, materiaPrima, costoManoObra, gananciaDiaria, gananciaTotal);
-                }
-
 
             }
 
@@ -149,14 +213,21 @@ namespace tp3
             int filasInervalos = dgvProb.Rows.Count;
             for(int j = 0; j<filasInervalos; j++)
             {
-                double probAcumulada = double.Parse(dgvProb.Rows[j].Cells["Probabilidad_Acumulada"].Value.ToString());
-                if (probAcumulada != null && numeroAleatorio < probAcumulada)
+                if(dgvProb.Rows[j].Cells["Probabilidad_Acumulada"].Value != null)
                 {
-                    int cantidad = int.Parse(dgvProb.Rows[j].Cells["Obreros"].Value.ToString());
-                    ausentes = cantidad;
+                    double probAcumulada = double.Parse(dgvProb.Rows[j].Cells["Probabilidad_Acumulada"].Value.ToString());
+                    if (numeroAleatorio < probAcumulada)
+                    {
+                        int cantidad = int.Parse(dgvProb.Rows[j].Cells["Obreros"].Value.ToString());
+                        ausentes = cantidad;
+                        break;
+                    }
+                }
+                else
+                {
+                    ausentes = 0;
                     break;
                 }
-                    
             }
             return ausentes;
         }
