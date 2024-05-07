@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "e:\\Falcultad\\4to\\Simulacion\\TPs\\TP3_AusentismoEnLaIndustria\\tp3.csproj": {}
+    "c:\\Users\\oescudero\\Desktop\\Facultad\\Facultad\\4to año\\Simulacion\\Practico\\TPs\\TP3_AusentismoEnLaIndustria\\tp3.csproj": {}
   },
   "projects": {
-    "e:\\Falcultad\\4to\\Simulacion\\TPs\\TP3_AusentismoEnLaIndustria\\tp3.csproj": {
+    "c:\\Users\\oescudero\\Desktop\\Facultad\\Facultad\\4to año\\Simulacion\\Practico\\TPs\\TP3_AusentismoEnLaIndustria\\tp3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\Falcultad\\4to\\Simulacion\\TPs\\TP3_AusentismoEnLaIndustria\\tp3.csproj",
+        "projectUniqueName": "c:\\Users\\oescudero\\Desktop\\Facultad\\Facultad\\4to año\\Simulacion\\Practico\\TPs\\TP3_AusentismoEnLaIndustria\\tp3.csproj",
         "projectName": "tp3",
-        "projectPath": "e:\\Falcultad\\4to\\Simulacion\\TPs\\TP3_AusentismoEnLaIndustria\\tp3.csproj",
-        "packagesPath": "C:\\Users\\Octavio\\.nuget\\packages\\",
-        "outputPath": "e:\\Falcultad\\4to\\Simulacion\\TPs\\TP3_AusentismoEnLaIndustria\\obj\\",
+        "projectPath": "c:\\Users\\oescudero\\Desktop\\Facultad\\Facultad\\4to año\\Simulacion\\Practico\\TPs\\TP3_AusentismoEnLaIndustria\\tp3.csproj",
+        "packagesPath": "C:\\Users\\oescudero\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\oescudero\\Desktop\\Facultad\\Facultad\\4to año\\Simulacion\\Practico\\TPs\\TP3_AusentismoEnLaIndustria\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Octavio\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\oescudero\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0-windows"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

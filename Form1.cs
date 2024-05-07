@@ -107,7 +107,7 @@ namespace tp3
             }
 
             // Mostrar la ganancia total al final de la simulaci�n
-            MessageBox.Show("La ganancia total durante " + diasSimulacion + " d�as es: $" + gananciaTotal);
+            MessageBox.Show("La ganancia total durante " + diasSimulacion + " dias es: $" + gananciaTotal);
 
             // Limpiar los cuadros de texto
             // LimpiarCampos();
@@ -123,9 +123,6 @@ namespace tp3
             txtDesdeDia.Clear();
             txtCantidadDiasMostrar.Clear();
             txtCantidadObrerosNomina.Clear();
-
-
-
         }
 
         private bool CamposVacios()
@@ -178,12 +175,9 @@ namespace tp3
             for (int i = 0; i < (filas - 1); i++)
             {
                 double probabilidadIndividual = double.Parse(dgvProb.Rows[i].Cells["Probabilidad"].Value.ToString());
-                if (probabilidadIndividual > 0.000)
-                {
                     double prob = Math.Round(((acumulador + probabilidadIndividual)), 4);
                     acumulador = prob;
                     dgvProb.Rows[i].Cells["Probabilidad_Acumulada"].Value = acumulador;
-                }
                 //else
                 //{
                 //double prob = ((acumulador + probabilidadIndividual));
@@ -192,7 +186,7 @@ namespace tp3
                 //}
 
             }
-            dgvProb.Rows[filas - 1].Cells["Probabilidad_Acumulada"].Value = acumulador;
+            dgvProb.Rows[filas - 1].Cells["Probabilidad_Acumulada"].Value = Math.Round(acumulador,1);
 
 
         }
@@ -328,9 +322,11 @@ namespace tp3
         {
             string nuevo = Microsoft.VisualBasic.Interaction.InputBox("Ingrese la cantidad de Dias para el ausentismo", "Dias: ");
 
+            //Valida que lo ingresado sea un numero y no se modifique la fila del total
             if (int.TryParse(nuevo, out _) && e.RowIndex != dgvProb.Rows.Count)
             {
                 dgvProb.Rows[e.RowIndex].Cells[1].Value = nuevo;
+                //Calcula las probabilidades y los totales nuevamente
                 calcularTotalDias();
                 calcularProbabilidad();
                 calcularProbabilidadAcumulada();

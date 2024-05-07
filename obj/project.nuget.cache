@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "uLHDGgSIq3oJ6ZADQwK0du/KFrwOPr6gZHZQ+si7CdJNTd/AzV91KNsXpL7+eYkBZuqyCytq4+32zOOsm9JaGQ==",
+  "dgSpecHash": "GphWWMaG4TO1KodeUfAdqbY2Xl0PxJTxOjSBQ+9SNKd9hADnp/Gr2+vg2/F0gK7bZwsmQqr46gDgKe8t0LQqCw==",
   "success": true,
-  "projectFilePath": "e:\\Falcultad\\4to\\Simulacion\\TPs\\TP3_AusentismoEnLaIndustria\\tp3.csproj",
+  "projectFilePath": "c:\\Users\\oescudero\\Desktop\\Facultad\\Facultad\\4to año\\Simulacion\\Practico\\TPs\\TP3_AusentismoEnLaIndustria\\tp3.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Octavio\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
-    "C:\\Users\\Octavio\\.nuget\\packages\\microsoft.office.interop.excel\\15.0.4795.1001\\microsoft.office.interop.excel.15.0.4795.1001.nupkg.sha512"
+    "C:\\Users\\oescudero\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
+    "C:\\Users\\oescudero\\.nuget\\packages\\microsoft.office.interop.excel\\15.0.4795.1001\\microsoft.office.interop.excel.15.0.4795.1001.nupkg.sha512"
   ],
   "logs": []
 }
