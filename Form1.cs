@@ -4,8 +4,7 @@ using System.Globalization;
 using System.Data;
 using System.Numerics;
 using System.Security.Cryptography;
-using MathNet.Numerics.Distributions;
-using Microsoft.Office.Interop.Excel;
+
 
 
 namespace tp3
@@ -17,9 +16,11 @@ namespace tp3
             InitializeComponent();
             InitializeSecondDataGridView();
             cargarPorDefecto();
-            calcularMedia();
-            calcularProbabilidadPoisson();
-            cargarLimites();
+            calcularTotalDias();
+            calcularProbabilidad();
+            calcularProbabilidadAcumulada();
+            
+           
             // Configurar DataGridView
             dgvSimulacion.ColumnCount = 10;
             dgvSimulacion.Columns[0].Name = "Día";
@@ -33,6 +34,13 @@ namespace tp3
             dgvSimulacion.Columns[8].Name = "Ganancia Diaria";
             dgvSimulacion.Columns[9].Name = "Ganancia Acumulada";
         }
+
+
+
+
+
+
+
 
         private void Simular(double valorVenta, double costosVariables, double remuneraciones, int diasSimulacion, int desdeDia, int cantidadDiasMostrar, int cantidadObrerosNomina, List<int> valoresProb, int total)
         {
@@ -52,8 +60,8 @@ namespace tp3
                 int totalObreros = cantidadObrerosNomina;
 
                 // Calcular el número de obreros ausentes
+                //int obrerosAusentes = calcularObrerosAusentes(valoresProb, total,  numeroAleatorio);
                 int obrerosAusentes = calcularObrerosFaltantes(numeroAleatorio);
-
 
                 // Calcular el número de obreros presentes
                 int obrerosPresentes = totalObreros - obrerosAusentes;
@@ -84,7 +92,11 @@ namespace tp3
                 gananciaTotal += gananciaDiaria;
 
                 // Agregar fila a DataGridView solo si el día es mayor o igual a desdeDia
-                if (dia >= desdeDia && dgvSimulacion.Rows.Count <= cantidadDiasMostrar)
+                if (dia >= desdeDia && dia <= cantidadDiasMostrar)
+                {
+                    dgvSimulacion.Rows.Add(dia, numeroAleatorio, obrerosAusentes, obrerosPresentes, plantaOperativa, ingresosDiarios, materiaPrima, costoManoObra, gananciaDiaria, gananciaTotal);
+                }
+                if(dia == diasSimulacion)
                 {
                     dgvSimulacion.Rows.Add(dia, numeroAleatorio, obrerosAusentes, obrerosPresentes, plantaOperativa, ingresosDiarios, materiaPrima, costoManoObra, gananciaDiaria, gananciaTotal);
                 }
@@ -137,8 +149,8 @@ namespace tp3
             int filasInervalos = dgvProb.Rows.Count;
             for(int j = 0; j<filasInervalos; j++)
             {
-                double limiteSuperior = double.Parse(dgvProb.Rows[j].Cells["Limite_Superior"].Value.ToString());
-                if (numeroAleatorio < limiteSuperior)
+                double probAcumulada = double.Parse(dgvProb.Rows[j].Cells["Probabilidad_Acumulada"].Value.ToString());
+                if (probAcumulada != null && numeroAleatorio < probAcumulada)
                 {
                     int cantidad = int.Parse(dgvProb.Rows[j].Cells["Obreros"].Value.ToString());
                     ausentes = cantidad;
@@ -149,7 +161,77 @@ namespace tp3
             return ausentes;
         }
 
+        private void calcularProbabilidadAcumulada()
+        {
+            int filas = dgvProb.RowCount;
+            //double precision = 0.001;
+            double acumulador = 0.000;
+            for(int i = 0; i<filas; i++)
+            {
+                if (i < 6)
+                {
+                    double probabilidadIndividual = double.Parse(dgvProb.Rows[i].Cells["Probabilidad"].Value.ToString());
+                    if(probabilidadIndividual > 0.000)
+                    {
+                    double prob = Math.Round(((acumulador + probabilidadIndividual)),4);
+                    acumulador = prob;
+                    dgvProb.Rows[i].Cells["Probabilidad_Acumulada"].Value = acumulador;
+                    }
+                    //else
+                    //{
+                        //double prob = ((acumulador + probabilidadIndividual));
+                        //acumulador = prob;
+                        //dgvProb.Rows[i].Cells["Probabilidad_Acumulada"].Value = acumulador;
+                    //}
+                    
+
+                }
+                if (i == 6)
+                {
+                    dgvProb.Rows[i].Cells["Probabilidad_Acumulada"].Value = acumulador;
+                }
+            }
+
+
+        }
+
+        private void calcularTotalDias()
+        {
+            int filas = dgvProb.RowCount;
+            int acumulador = 0;
+            for(int i = 0; i<filas; i++)
+            {
+                if (i < 6)
+                {
+                    int fo = int.Parse(dgvProb.Rows[i].Cells["CantDias"].Value.ToString());
+                    acumulador += fo;
+                }
+                
+                
+            }
+            dgvProb.Rows[6].Cells["CantDias"].Value = acumulador;
+
+        }
         
+        private void calcularProbabilidad()
+        {
+            int filas = dgvProb.Rows.Count;
+            int total = int.Parse(dgvProb.Rows[6].Cells["CantDias"].Value.ToString());
+
+            for (int i = 0; i < filas; i++)
+            {
+                if (i < 6)
+                {
+                    int dias = int.Parse(dgvProb.Rows[i].Cells["CantDias"].Value.ToString());
+                    double probabilidad = Math.Round((double)dias / total, 4);
+                    dgvProb.Rows[i].Cells["Probabilidad"].Value = probabilidad;
+
+                }
+
+            }
+
+
+        }
         
         
         //esta funcion usaba las probabilidades con valores no muy precisos, hice una que los extrae directamente de la tabla
@@ -208,10 +290,12 @@ namespace tp3
                     return;
                 }
             }
-            //Recalcular las columnas para los nuevos campos
-            calcularMedia();
-            calcularProbabilidadPoisson();
-            cargarLimites();
+            //Cargar valores de serie
+            calcularProbabilidad();
+            calcularProbabilidadAcumulada();
+
+
+
             // Llamar a la función de simulación con los parámetros ingresados
             Simular(valorVenta, costosVariables, remuneraciones, diasSimulacion, desdeDia, cantidadDiasMostrar, cantidadObrerosNomina, valoresProb, total);
         }
@@ -264,141 +348,15 @@ namespace tp3
 
         
 
-        //Media
-        private void calcularMedia()
-        {
-            int filas = dgvProb.RowCount;
-            int acumulador = 0;
-            
-            for(int i = 0;i < filas;i++)
-            {
-                if (i < 6)
-                {
-                    if (dgvProb.Rows[i].Cells["CantDias"].Value != null)
-                    {
-                        int obreros = int.Parse(dgvProb.Rows[i].Cells["Obreros"].Value.ToString());
-                        int dias = int.Parse(dgvProb.Rows[i].Cells["CantDias"].Value.ToString());
-                        int producto = obreros * dias;
-                        dgvProb.Rows[i].Cells["Media"].Value = producto;
-                        acumulador += producto;
-
-                    }
-                }
-                if(i == 6)
-                {
-                    int total = int.Parse(dgvProb.Rows[i].Cells["CantDias"].Value.ToString());
-                    double media = Math.Round((double)acumulador / total, 2);
-                    dgvProb.Rows[i].Cells["Media"].Value = media;
-                }
-                
-            }
-            
-
-        }
+        
 
        
         
         
-        //Factorial para la formula de Poisson
-        private long Factorial(int n)
-        {
-            if (n == 0)
-                return 1;
-            else
-                return n * Factorial(n - 1);
-        }
-
+        
 
        
-
-
-        //Probabilidad de poisson
-        private void calcularProbabilidadPoisson()
-        {
-            int filas = dgvProb.Rows.Count;
-            double acumulador = 0;
-            int ultimaFila = 6;
-            for(int i = 0; i < filas; i++)
-            {
-                if (i < 6)
-                {
-                    //Evento es el ausentismo de cada dia
-                    int evento = int.Parse(dgvProb.Rows[i].Cells["Obreros"].Value.ToString());
-                    double media = double.Parse(dgvProb.Rows[ultimaFila].Cells["Media"].Value.ToString());
-                    
-                    double lambda = media ;
-
-                    // Calcular e^(-lambda)
-                    double eLambda = Math.Pow(Math.E, -lambda);
-
-                    // Calcular lambda^k
-                    double lambdaK = Math.Pow(lambda, evento);
-
-                    // Calcular k!
-                    long factorialK = Factorial(evento);
-
-                    double probabilidad = Math.Round((eLambda* lambdaK) / factorialK,4);
-
-                    //Agrego en la tabla de distribucion de probabilidades la p()
-                    dgvProb.Rows[i].Cells["Probabilidad"].Value = probabilidad;
-
-
-                    acumulador += Math.Round(probabilidad,3);
-
-                    
-
-                }
-                if(i == 6)
-                {
-                    if(acumulador >= 0.98)
-                    {
-                        acumulador = 1.00;
-                        dgvProb.Rows[i].Cells["Probabilidad"].Value = acumulador;
-                    }
-                   
-                }
-            }
-
-        }
-
-        //Intervalos de probabilidad
-        private void cargarLimites()
-        {
-            int filas = dgvProb.Rows.Count;
-            double limiteInferior = 0.000;
-            double limiteSuperior;
-
-            for(int i = 0; i < filas; i++)
-            {
-                if(i == 0)
-                {
-                    dgvProb.Rows[i].Cells["Limite_Inferior"].Value = limiteInferior;
-                    double siguienteProb = double.Parse(dgvProb.Rows[i].Cells["Probabilidad"].Value.ToString());
-                    limiteSuperior = Math.Round(limiteInferior + siguienteProb,4);
-                    dgvProb.Rows[i].Cells["Limite_Superior"].Value = limiteSuperior;
-
-                }
-                else
-                {
-                    if (i < 6)
-                    {
-                        limiteInferior = double.Parse(dgvProb.Rows[i - 1].Cells["Limite_Superior"].Value.ToString());
-                        dgvProb.Rows[i].Cells["Limite_Inferior"].Value = limiteInferior;
-                        double siguienteProb = double.Parse(dgvProb.Rows[i].Cells["Probabilidad"].Value.ToString());
-                        limiteSuperior = Math.Round(limiteInferior + siguienteProb,4);
-                        dgvProb.Rows[i].Cells["Limite_Superior"].Value = limiteSuperior;
-
-
-                    }
-                }
-               
-
-                
-                
-            }
-
-
-        }
+        
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {

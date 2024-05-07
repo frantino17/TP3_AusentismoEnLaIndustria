@@ -44,15 +44,13 @@ namespace tp3
             label6 = new Label();
             label5 = new Label();
             dgvProb = new DataGridView();
-            Obreros = new DataGridViewTextBoxColumn();
-            CantDias = new DataGridViewTextBoxColumn();
-            Media = new DataGridViewTextBoxColumn();
-            Probabilidad = new DataGridViewTextBoxColumn();
-            Limite_Inferior = new DataGridViewTextBoxColumn();
-            Limite_Superior = new DataGridViewTextBoxColumn();
             CantObreros = new Label();
             txtCantidadObrerosNomina = new TextBox();
             btnLimpiar = new Button();
+            Obreros = new DataGridViewTextBoxColumn();
+            CantDias = new DataGridViewTextBoxColumn();
+            Probabilidad = new DataGridViewTextBoxColumn();
+            Probabilidad_Acumulada = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvSimulacion).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvProb).BeginInit();
             SuspendLayout();
@@ -178,52 +176,13 @@ namespace tp3
             dgvProb.AllowUserToAddRows = false;
             dgvProb.AllowUserToDeleteRows = false;
             dgvProb.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProb.Columns.AddRange(new DataGridViewColumn[] { Obreros, CantDias, Media, Probabilidad, Limite_Inferior, Limite_Superior });
+            dgvProb.Columns.AddRange(new DataGridViewColumn[] { Obreros, CantDias, Probabilidad, Probabilidad_Acumulada });
             dgvProb.Location = new Point(348, 26);
             dgvProb.Margin = new Padding(3, 2, 3, 2);
             dgvProb.Name = "dgvProb";
             dgvProb.RowHeadersWidth = 51;
             dgvProb.Size = new Size(714, 209);
             dgvProb.TabIndex = 15;
-            // 
-            // Obreros
-            // 
-            Obreros.HeaderText = "Ausentes";
-            Obreros.MinimumWidth = 6;
-            Obreros.Name = "Obreros";
-            Obreros.ReadOnly = true;
-            Obreros.Width = 125;
-            // 
-            // CantDias
-            // 
-            CantDias.HeaderText = "Cantidad de dias";
-            CantDias.MinimumWidth = 6;
-            CantDias.Name = "CantDias";
-            CantDias.Width = 125;
-            // 
-            // Media
-            // 
-            Media.HeaderText = "Media";
-            Media.Name = "Media";
-            Media.ReadOnly = true;
-            // 
-            // Probabilidad
-            // 
-            Probabilidad.HeaderText = "Probabilidad";
-            Probabilidad.Name = "Probabilidad";
-            Probabilidad.ReadOnly = true;
-            // 
-            // Limite_Inferior
-            // 
-            Limite_Inferior.HeaderText = "Limite_Inferior";
-            Limite_Inferior.Name = "Limite_Inferior";
-            Limite_Inferior.ReadOnly = true;
-            // 
-            // Limite_Superior
-            // 
-            Limite_Superior.HeaderText = "Limite_Superior";
-            Limite_Superior.Name = "Limite_Superior";
-            Limite_Superior.ReadOnly = true;
             // 
             // CantObreros
             // 
@@ -250,6 +209,34 @@ namespace tp3
             btnLimpiar.Text = "Limpiar Campos";
             btnLimpiar.UseVisualStyleBackColor = true;
             btnLimpiar.Click += btnLimpiar_Click;
+            // 
+            // Obreros
+            // 
+            Obreros.HeaderText = "Ausentes";
+            Obreros.MinimumWidth = 6;
+            Obreros.Name = "Obreros";
+            Obreros.ReadOnly = true;
+            Obreros.Width = 125;
+            // 
+            // CantDias
+            // 
+            CantDias.HeaderText = "Cantidad de dias";
+            CantDias.MinimumWidth = 6;
+            CantDias.Name = "CantDias";
+            CantDias.Width = 125;
+            // 
+            // Probabilidad
+            // 
+            Probabilidad.HeaderText = "Probabilidad";
+            Probabilidad.Name = "Probabilidad";
+            Probabilidad.ReadOnly = true;
+            // 
+            // Probabilidad_Acumulada
+            // 
+            Probabilidad_Acumulada.HeaderText = "Probabilidad_Acumulada";
+            Probabilidad_Acumulada.Name = "Probabilidad_Acumulada";
+            Probabilidad_Acumulada.ReadOnly = true;
+            Probabilidad_Acumulada.Width = 200;
             // 
             // Form1
             // 
@@ -309,9 +296,7 @@ namespace tp3
         private Button btnLimpiar;
         private DataGridViewTextBoxColumn Obreros;
         private DataGridViewTextBoxColumn CantDias;
-        private DataGridViewTextBoxColumn Media;
         private DataGridViewTextBoxColumn Probabilidad;
-        private DataGridViewTextBoxColumn Limite_Inferior;
-        private DataGridViewTextBoxColumn Limite_Superior;
+        private DataGridViewTextBoxColumn Probabilidad_Acumulada;
     }
 }
