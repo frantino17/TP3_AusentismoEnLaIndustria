@@ -36,3 +36,24 @@ D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\b
 D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.csproj.AssemblyReference.cache
 D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.csproj.Up2Date
 D:\Facultad\SIM\Practico\Trabajos Practicos\TP3\Tp\TP3_AusentismoEnLaIndustria\bin\Debug\net8.0-windows\Microsoft.Office.Interop.Excel.dll
+e:\Falcultad\4to\Simulacion\TPs\TP3_AusentismoEnLaIndustria\bin\Debug\net8.0-windows\tp3.exe
+e:\Falcultad\4to\Simulacion\TPs\TP3_AusentismoEnLaIndustria\bin\Debug\net8.0-windows\tp3.deps.json
+e:\Falcultad\4to\Simulacion\TPs\TP3_AusentismoEnLaIndustria\bin\Debug\net8.0-windows\tp3.runtimeconfig.json
+e:\Falcultad\4to\Simulacion\TPs\TP3_AusentismoEnLaIndustria\bin\Debug\net8.0-windows\tp3.dll
+e:\Falcultad\4to\Simulacion\TPs\TP3_AusentismoEnLaIndustria\bin\Debug\net8.0-windows\tp3.pdb
+e:\Falcultad\4to\Simulacion\TPs\TP3_AusentismoEnLaIndustria\bin\Debug\net8.0-windows\MathNet.Numerics.dll
+e:\Falcultad\4to\Simulacion\TPs\TP3_AusentismoEnLaIndustria\bin\Debug\net8.0-windows\Microsoft.Office.Interop.Excel.dll
+e:\Falcultad\4to\Simulacion\TPs\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.csproj.AssemblyReference.cache
+e:\Falcultad\4to\Simulacion\TPs\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.Form1.resources
+e:\Falcultad\4to\Simulacion\TPs\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.csproj.GenerateResource.cache
+e:\Falcultad\4to\Simulacion\TPs\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.GeneratedMSBuildEditorConfig.editorconfig
+e:\Falcultad\4to\Simulacion\TPs\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.AssemblyInfoInputs.cache
+e:\Falcultad\4to\Simulacion\TPs\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.AssemblyInfo.cs
+e:\Falcultad\4to\Simulacion\TPs\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.csproj.CoreCompileInputs.cache
+e:\Falcultad\4to\Simulacion\TPs\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.sourcelink.json
+e:\Falcultad\4to\Simulacion\TPs\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.csproj.Up2Date
+e:\Falcultad\4to\Simulacion\TPs\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.dll
+e:\Falcultad\4to\Simulacion\TPs\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\refint\tp3.dll
+e:\Falcultad\4to\Simulacion\TPs\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.pdb
+e:\Falcultad\4to\Simulacion\TPs\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\tp3.genruntimeconfig.cache
+e:\Falcultad\4to\Simulacion\TPs\TP3_AusentismoEnLaIndustria\obj\Debug\net8.0-windows\ref\tp3.dll
