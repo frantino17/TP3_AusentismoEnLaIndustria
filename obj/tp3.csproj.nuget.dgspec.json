@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Facultad\\SIM\\Practico\\Trabajos Practicos\\TP3\\Tp\\TP3_AusentismoEnLaIndustria\\tp3.csproj": {}
+    "c:\\Users\\oescudero\\Desktop\\Facultad\\Facultad\\4to año\\Simulacion\\Practico\\TPs\\TP3_AusentismoEnLaIndustria\\tp3.csproj": {}
   },
   "projects": {
-    "D:\\Facultad\\SIM\\Practico\\Trabajos Practicos\\TP3\\Tp\\TP3_AusentismoEnLaIndustria\\tp3.csproj": {
+    "c:\\Users\\oescudero\\Desktop\\Facultad\\Facultad\\4to año\\Simulacion\\Practico\\TPs\\TP3_AusentismoEnLaIndustria\\tp3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Facultad\\SIM\\Practico\\Trabajos Practicos\\TP3\\Tp\\TP3_AusentismoEnLaIndustria\\tp3.csproj",
+        "projectUniqueName": "c:\\Users\\oescudero\\Desktop\\Facultad\\Facultad\\4to año\\Simulacion\\Practico\\TPs\\TP3_AusentismoEnLaIndustria\\tp3.csproj",
         "projectName": "tp3",
-        "projectPath": "D:\\Facultad\\SIM\\Practico\\Trabajos Practicos\\TP3\\Tp\\TP3_AusentismoEnLaIndustria\\tp3.csproj",
-        "packagesPath": "C:\\Users\\emili\\.nuget\\packages\\",
-        "outputPath": "D:\\Facultad\\SIM\\Practico\\Trabajos Practicos\\TP3\\Tp\\TP3_AusentismoEnLaIndustria\\obj\\",
+        "projectPath": "c:\\Users\\oescudero\\Desktop\\Facultad\\Facultad\\4to año\\Simulacion\\Practico\\TPs\\TP3_AusentismoEnLaIndustria\\tp3.csproj",
+        "packagesPath": "C:\\Users\\oescudero\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\oescudero\\Desktop\\Facultad\\Facultad\\4to año\\Simulacion\\Practico\\TPs\\TP3_AusentismoEnLaIndustria\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\emili\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\oescudero\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0-windows"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -73,7 +71,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

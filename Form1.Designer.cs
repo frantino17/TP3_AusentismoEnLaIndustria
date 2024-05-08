@@ -183,6 +183,7 @@ namespace tp3
             dgvProb.RowHeadersWidth = 51;
             dgvProb.Size = new Size(714, 209);
             dgvProb.TabIndex = 15;
+            dgvProb.CellDoubleClick += dgvProb_CellDoubleClick;
             // 
             // CantObreros
             // 
