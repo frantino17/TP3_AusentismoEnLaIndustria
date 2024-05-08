@@ -254,6 +254,12 @@ namespace tp3
                 MessageBox.Show("Por favor, complete todos los campos antes de continuar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return; // Salir del m�todo sin continuar la simulaci�n
             }
+            int ObrerosNominaNumero = int.Parse(txtCantidadObrerosNomina.Text);
+            if (ObrerosNominaNumero < 21)
+            {
+                MessageBox.Show("La cantidad de la Nomina de Obreros tiene que ser mayor o igual a 21 .", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Salir del m�todo sin continuar la simulaci�n
+            }
 
             // Convertir los valores de los campos de texto a tipos num�ricos
             double valorVenta = double.Parse(txtValorVenta.Text);
